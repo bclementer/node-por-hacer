@@ -42,6 +42,17 @@ const getListado = () => {
     return listadoPorHacer;
 }
 
+const getListadoOpcion = (completado) => {
+    cargarDB();
+
+    //Recuperamos aquellos registros que nos indique.
+    let nuevoListado = listadoPorHacer.filter(tarea => {
+        return tarea.completado.toString() === completado;
+    })
+
+    return nuevoListado;
+}
+
 const actualizar = (descripcion, completado = true) => {
     cargarDB();
 
@@ -95,6 +106,7 @@ const borrar = (descripcion) => {
 module.exports = {
     crear,
     getListado,
+    getListadoOpcion,
     actualizar,
     borrar
 }

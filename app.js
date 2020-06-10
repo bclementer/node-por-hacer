@@ -16,7 +16,8 @@ switch (comando) {
 
     case 'listar':
         //console.log('Mostrar todas las tareas por hacer');
-        let listado = porHacer.getListado();
+        //let listado = porHacer.getListado();
+        let listado = porHacer.getListadoOpcion(argv.completado);
 
         for (let tarea of listado) {
             console.log('========Por Hacer ========'.green);
